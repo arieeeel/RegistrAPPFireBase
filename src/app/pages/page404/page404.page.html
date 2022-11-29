@@ -1,0 +1,21 @@
+
+<app-header [pageTitle]="pageTitle"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="danger">
+        <strong>Pagina no encontrada!!</strong>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      oee! no esta el contenido que buscas webon
+    </ion-card-content>
+
+    <ion-item [routerLink]="['/home']" class="ion-activated">
+      <ion-icon name="arrow-undo-outline"></ion-icon>
+      <ion-label>Volver</ion-label>
+    </ion-item>
+  </ion-card>
+</ion-content>

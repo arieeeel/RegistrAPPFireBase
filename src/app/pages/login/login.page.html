@@ -1,0 +1,30 @@
+<app-header>
+  <ion-toolbar color="dark">
+    <ion-title class="container">login</ion-title>
+  </ion-toolbar>
+</app-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="title">RegistrAPP</ion-card-title>
+      <img src="assets/img/drakon.svg" alt="logo drakon">
+    </ion-card-header>
+    <div class="botons">
+      <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input [(ngModel)]="credenciales.correo" type="correo"></ion-input>
+      </ion-item><br>
+    
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input [(ngModel)]="credenciales.password" type="password"></ion-input>
+      </ion-item><br>
+
+      <ion-button expand="block" (click)="login()">
+        Iniciar Sesion
+      </ion-button>
+    </div>
+  </ion-card>
+      
+</ion-content>

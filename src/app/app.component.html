@@ -1,0 +1,34 @@
+<ion-app>
+  <ion-menu contentId="main">
+
+    <ion-header>
+      <ion-toolbar color="dark">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item lines="none" [routerLink]="['/home']">
+          <ion-icon slot="start" name="home-outline"></ion-icon>Inicio
+        </ion-item>
+        <ion-item lines="none" [routerLink]="['/reg-alumno']">
+          <ion-icon slot="start" name="person-outline"></ion-icon>Registro Alumno
+        </ion-item>
+        <ion-item lines="none" [routerLink]="['/about']">
+          <ion-icon slot="start" name="people-outline"></ion-icon>Conocenos
+        </ion-item>
+        <ion-item lines="none" [routerLink]="['/coversor']">
+          <ion-icon slot="start" name="cash-outline"></ion-icon>Conversor
+        </ion-item>
+        <ion-item lines="none" [routerLink]="['/clima']">
+          <ion-icon slot="start" name="cloud-outline"></ion-icon>Clima
+        </ion-item>
+        <ion-item lines="none" (click)="salir()" routerDirection="root">
+          <ion-icon slot="start" name="exit-outline"></ion-icon>Salir
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

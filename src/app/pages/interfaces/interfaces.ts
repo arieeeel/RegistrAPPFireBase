@@ -6,7 +6,7 @@ export interface Componente {
     redirectTo: string;
 }
 
-export interface Usuarios {
+export interface Usuario {
     nombre: string;
     apellido: string;
     genero: string;

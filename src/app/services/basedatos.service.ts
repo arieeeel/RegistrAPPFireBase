@@ -1,4 +1,4 @@
-import { Usuarios } from './../pages/interfaces/interfaces';
+import { Usuario } from './../pages/interfaces/interfaces';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 })
 export class BasedatosService {
 
-  editUsuarios: Usuarios;
+  editUsuario: Usuario;
 
   constructor(public Firestore: AngularFirestore,) { }
   
@@ -27,13 +27,13 @@ getCollectionChanges<tipo>(enlace:string): Observable<tipo[]>{
   return ref.valueChanges();
 
 }
-setUsuarios(usuarios: Usuarios){
-  this.editUsuarios = usuarios;
+setUsuarios(usuario: Usuario){
+  this.editUsuario = usuario;
 }
 getUsuarios(){
-  return this.editUsuarios;
+  return this.editUsuario;
 }
-deleteUsuarios<tipo>(enlace: string, id: string){
+delete<tipo>(enlace: string, id: string){
   const ref= this.Firestore.collection<tipo>(enlace);
   return ref.doc(id).delete();
 }

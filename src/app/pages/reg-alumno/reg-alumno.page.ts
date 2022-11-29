@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BasedatosService } from 'src/app/services/basedatos.service';
-import { Usuarios } from '../interfaces/interfaces';
+import { Usuario } from '../interfaces/interfaces';
 import { ToastController, LoadingController } from '@ionic/angular';
 
 
@@ -13,7 +13,7 @@ export class RegAlumnoPage implements OnInit {
 
   pageTitle= 'Registro';
 
-  newUsuarios: Usuarios = {
+  newUsuarios: Usuario = {
     nombre: '',
     apellido: '',
     genero: '',
@@ -48,7 +48,7 @@ export class RegAlumnoPage implements OnInit {
       data.id = this.database.createId();
     }
     const enlace = 'Usuarios'
-    await this.database.createDocument<Usuarios>(data, enlace, data.id).then((_) => {
+    await this.database.createDocument<Usuario>(data, enlace, data.id).then((_) => {
       this.presentToast('Guardado con Exito', 2000)
       this.loading.dismiss();
       this.newUsuarios = {

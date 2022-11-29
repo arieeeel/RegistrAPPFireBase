@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuarios } from '../interfaces/interfaces';
+import { Usuario } from '../interfaces/interfaces';
 import { BasedatosService } from 'src/app/services/basedatos.service';
 
 
@@ -10,7 +10,7 @@ import { BasedatosService } from 'src/app/services/basedatos.service';
 })
 export class CrudPage implements OnInit {
 
-  usuarios: Usuarios[] = []
+  usuario: Usuario[] = []
 
   constructor(public basedatosService: BasedatosService) { }
 
@@ -20,18 +20,18 @@ export class CrudPage implements OnInit {
 
   getUsuarios(){
     const enlace = 'Usuarios';
-    this.basedatosService.getCollectionChanges<Usuarios>(enlace).subscribe( res =>{
-      this.usuarios = res;
+    this.basedatosService.getCollectionChanges<Usuario>(enlace).subscribe( res =>{
+      this.usuario = res;
     });
   }
 
-  EditUsuario(usuarios: Usuarios){
+  EditUsuario(usuarios: Usuario){
     console.log('da click en el item ->',usuarios);
     this.basedatosService.setUsuarios(usuarios);
   }
 
-  async deleteUsuario(usuarios: Usuarios){
-    const res = await this.basedatosService.deleteUsuarios<Usuarios>('Usuarios', usuarios.id).catch( res =>{
+  async deleteUsuario(usuario: Usuario){
+    const res = await this.basedatosService.delete<Usuario>('Usuarios', usuario.id).catch( res =>{
       console.log('error =>',res);
     });
     console.log('borrado con exito =>', res);

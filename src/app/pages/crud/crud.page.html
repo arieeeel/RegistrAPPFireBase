@@ -1,12 +1,12 @@
 <app-header></app-header>
 
 <ion-content>
-  <ion-item *ngFor="let alumnos of usuarios">
+  <ion-item *ngFor="let alumnos of usuario">
     <ion-label>
       {{alumnos.nombre}}
     </ion-label>
     <ion-buttons slot="end">
-      <ion-button [routerLink]="['/reg-alumno']" (click)="EditUsuarios(alumnos)">
+      <ion-button [routerLink]="['/reg-alumno']" (click)="EditUsuario(alumnos)">
         <ion-icon slot="icon-only" name="create"></ion-icon>
       </ion-button>
       <ion-button (click)="deleteUsuario(alumnos)">

@@ -42,9 +42,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/reg-alumno/reg-alumno.module').then( m => m.RegAlumnoPageModule)
   },
   {
+    path: 'crud',
+    loadChildren: () => import('./pages/crud/crud.module').then( m => m.CrudPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'page404'
-  }
+  },
+  
   
 ];
 

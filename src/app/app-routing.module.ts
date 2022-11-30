@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -29,10 +28,6 @@ const routes: Routes = [
     
   },
   {
-    path: 'page404',
-    loadChildren: () => import('./pages/page404/page404.module').then( m => m.Page404PageModule)
-  },
-  {
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then( m => m.ClimaPageModule)
     
@@ -44,6 +39,10 @@ const routes: Routes = [
   {
     path: 'crud',
     loadChildren: () => import('./pages/crud/crud.module').then( m => m.CrudPageModule)
+  },
+  {
+    path: 'page404',
+    loadChildren: () => import('./pages/page404/page404.module').then( m => m.Page404PageModule)
   },
   {
     path: '**',

@@ -10,9 +10,12 @@ import { BasedatosService } from 'src/app/services/basedatos.service';
 })
 export class CrudPage implements OnInit {
 
+  pageTitle = 'Crud';
   usuario: Usuario[] = []
 
   constructor(public basedatosService: BasedatosService) { }
+
+  
 
   ngOnInit() {
     this.getUsuarios();

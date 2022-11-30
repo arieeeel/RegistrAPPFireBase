@@ -44,6 +44,29 @@ export class LoginPage implements OnInit {
         correo: null,
         password: null,
       }
+    }
+  }
+
+  async register() {
+    await this.interaction.presentLoading('Registrando...')
+
+    console.log('credenciales ->', this.credenciales); 
+    const res = await this.auth.register(this.credenciales.correo, this.credenciales.password).catch(error =>{})
+      console.log('error')
+      this.interaction.closeLoading();
+      this.interaction.presentToast('Usuario o Contraseña Invalida');
+
+
+    if (res) {
+      console.log('res ->', res);
+      
+      this.interaction.closeLoading();
+      this.interaction.presentToast('Registrado con Exito')
+      this.router.navigate(['home'])
+      this.credenciales = {
+        correo: null,
+        password: null,
+      }
       
     }
   }

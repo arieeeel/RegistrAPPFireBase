@@ -15,7 +15,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ComponentsModule,ReactiveFormsModule,HttpClientModule,AngularFirestoreModule,AngularFireAuthModule,AngularFireModule.initializeApp(environment.firebaseConfig)],

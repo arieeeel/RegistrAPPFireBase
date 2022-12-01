@@ -10,11 +10,11 @@ export class AuthService {
 
 
   login(correo: string, password: string){
-    return this.authfirebase.signInWithEmailAndPassword(correo, password)
+    return this.authfirebase.signInWithEmailAndPassword(correo, password);
   }
 
   register(correo: string, password: string){
-    return this.authfirebase.createUserWithEmailAndPassword(correo, password)
+    return this.authfirebase.createUserWithEmailAndPassword(correo, password);
   }
 
   logut(){

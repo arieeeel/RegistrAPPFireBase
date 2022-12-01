@@ -19,4 +19,5 @@ import { ComponentsModule } from 'src/app/components/components.module';
   ],
   declarations: [CoversorPage]
 })
+
 export class CoversorPageModule {}

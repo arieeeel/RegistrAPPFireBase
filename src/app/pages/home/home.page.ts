@@ -12,20 +12,20 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HomePage{
   
   pageTitle = 'Inicio';
+  
+  profile:any=null;
 
   constructor(private authService: AuthService,
     private LoadingCtrl: LoadingController,
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
-    private router: Router) {
+    private router: Router) {}
 
-    }
-
-    logut(){
+    logout(){
       this.authService.logout();
       this.router.navigateByUrl('/',{replaceUrl:true})
     }
-
+     
     async toastPresent(message:string){
       const toast = await this.toastCtrl.create({
         message:message,

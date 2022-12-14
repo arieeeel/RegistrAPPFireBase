@@ -36,9 +36,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/page404/page404.module').then( m => m.Page404PageModule)
   },
   {
+    path: 'qr',
+    loadChildren: () => import('./pages/qr/qr.module').then( m => m.QrPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'page404'
   },
+  
   
   
   

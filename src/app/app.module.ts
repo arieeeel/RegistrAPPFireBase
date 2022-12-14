@@ -23,6 +23,10 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 
 
+import { Capacitor } from '@capacitor/core';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+
+
 @NgModule({
   declarations: [AppComponent,RegisterComponent,LoginComponent,PerfilComponent,ModalComponent,],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ComponentsModule,FormsModule,ReactiveFormsModule,HttpClientModule,AngularFirestoreModule,AngularFireAuthModule,AngularFireModule.initializeApp(environment.firebaseConfig),

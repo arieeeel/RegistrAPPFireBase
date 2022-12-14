@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { SplashComponent } from './splash/splash.component';
+import { Usuario } from './models/models';
+import { FirestoreService } from './services/firestore.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +13,14 @@ import { SplashComponent } from './splash/splash.component';
 })
 export class AppComponent {
 
+  login:boolean=false;
+
   constructor(private modalController: ModalController,
     public alertController: AlertController,
-    public navCtrl: NavController) {
+    public navCtrl: NavController,
+    private firestore: FirestoreService,
+    private auth: AuthService,
+    private router: Router,) {
     this.presentSplash();
   }
   

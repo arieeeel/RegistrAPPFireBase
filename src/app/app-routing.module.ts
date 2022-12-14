@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { canActivate,redirectUnauthorizedTo} from '@angular/fire/auth-guard';
+import { LoginComponent } from '../app/components/login/login.component';
+import { RegisterComponent } from '../app/components/register/register.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
-    
-  },
+
+  { path: '',           redirectTo: '/login',      pathMatch: 'full' },
+  { path: 'login',      component :  LoginComponent                  },
+  { path: 'register',   component :  RegisterComponent               },
+  { path: 'perfil',     component : PerfilComponent },
+  
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
@@ -30,15 +30,6 @@ const routes: Routes = [
   {
     path: 'clima',
     loadChildren: () => import('./pages/clima/clima.module').then( m => m.ClimaPageModule)
-    
-  },
-  {
-    path: 'reg-alumno',
-    loadChildren: () => import('./pages/reg-alumno/reg-alumno.module').then( m => m.RegAlumnoPageModule)
-  },
-  {
-    path: 'crud',
-    loadChildren: () => import('./pages/crud/crud.module').then( m => m.CrudPageModule)
   },
   {
     path: 'page404',
@@ -48,6 +39,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'page404'
   },
+  
   
   
 ];

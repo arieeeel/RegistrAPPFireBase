@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="usuario">
+    <ion-item>
+      <ion-label position="stacked">Nombre</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Apellido</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.apellido"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Rut</ion-label>
+      <ion-input type="number" [(ngModel)]="usuario.rut"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Edad</ion-label>
+      <ion-input type="number" [(ngModel)]="usuario.edad"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Genero</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.genero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Direccion</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.direccion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Telefono</ion-label>
+      <ion-input type="text" [(ngModel)]="usuario.telefono"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input type="email" [(ngModel)]="usuario.password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Image</ion-label>
+      <ion-input type="url" [(ngModel)]="usuario.image"></ion-input>
+    </ion-item>
+
+  </div>
+
+  <ion-button expand="block" color="success" (click)="updateUsuario()">
+    <ion-icon name="save" slot="start">Actualizar</ion-icon>
+  </ion-button>
+  <ion-button expand="block" color="danger" (click)="deleteUsuario()">
+    <ion-icon name="trash" slot="start">Eliminar</ion-icon>
+  </ion-button>
+</ion-content>  

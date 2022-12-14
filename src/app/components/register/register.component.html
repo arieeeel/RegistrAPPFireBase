@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="container">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-card>
+  <ion-card-header>
+    <ion-card-title class="title">Datos personales:</ion-card-title>
+  </ion-card-header>
+
+    <ion-item class="usuariosInput">
+      <ion-label position="stacked" >Nombre:</ion-label>
+    <ion-input type="text" [(ngModel)]="datos.nombre"></ion-input>
+  </ion-item>
+
+  <ion-item class="usuariosInput">
+    <ion-label position="stacked" >Apellido:</ion-label>
+  <ion-input type="text" [(ngModel)]="datos.apellido" ></ion-input>
+</ion-item>
+
+<ion-item class="usuariosInput">
+  <ion-label position="stacked" >Genero:</ion-label>
+<ion-input type="text" [(ngModel)]="datos.genero" ></ion-input>
+</ion-item>
+   
+
+<ion-item class="usuariosInput">
+  <ion-label position="stacked" >Edad:</ion-label>
+<ion-input type="number" [(ngModel)]="datos.edad" ></ion-input>
+</ion-item>
+
+<ion-item class="usuariosInput">
+  <ion-label position="stacked" >Rut:</ion-label>
+<ion-input type="text" [(ngModel)]="datos.rut" ></ion-input>
+</ion-item>
+
+<ion-item class="usuariosInput">
+  <ion-label position="stacked" >Direccion:</ion-label>
+<ion-input type="text" [(ngModel)]="datos.direccion" ></ion-input>
+</ion-item>
+
+<ion-item class="usuariosInput">
+  <ion-label position="stacked" >Telefono:</ion-label>
+<ion-input type="number" [(ngModel)]="datos.telefono" ></ion-input>
+</ion-item>
+
+<br>
+
+<h3>Tus datos de ingreso:</h3>
+
+<ion-item class="usuariosInput">
+  <ion-label position="stacked" >Email:</ion-label>
+<ion-input type="text" [(ngModel)]="datos.email" ></ion-input>
+</ion-item>
+
+<ion-item class="usuariosInput">
+  <ion-label position="stacked" >Contraseña:</ion-label>
+<ion-input type="password" [(ngModel)]="datos.password" ></ion-input>
+</ion-item>
+
+<br>
+<br>
+
+  <ion-button expand="block" (click)="registrar()">Registrar</ion-button>
+  <ion-button expand="block" [routerLink]="['/login']">Iniciar Sesion</ion-button>
+</ion-card>
+</ion-content>

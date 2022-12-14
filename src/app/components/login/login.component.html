@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="container">login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="title">RegistrAPP</ion-card-title>
+      <img src="assets/img/drakon.svg" alt="logo">
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item class="ion-margin-bottom">
+        <ion-input [(ngModel)]="credenciales.email" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-input [(ngModel)]="credenciales.password" type="password" placeholder="Contraseña"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" (click)="login()"><ion-label>Iniciar Sesion</ion-label></ion-button>
+      <ion-button expand="block" [routerLink]="['/register']"><ion-label>Registrarse</ion-label></ion-button>
+    </ion-card-content>
+  
+  </ion-card>
+</ion-content>
+

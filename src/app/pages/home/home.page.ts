@@ -22,7 +22,7 @@ export class HomePage{
     }
 
     logut(){
-      this.authService.logut();
+      this.authService.logout();
       this.router.navigateByUrl('/',{replaceUrl:true})
     }
 
